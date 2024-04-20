@@ -329,6 +329,7 @@ public class BaseWifiTracker {
             @OnLifecycleEvent(Lifecycle.Event.ON_START)
             @MainThread
             public void onStart() {
+                Log.d("BaseWifiTracker", "JTS lifecycle onStart");
                 BaseWifiTracker.this.onStart();
             }
 

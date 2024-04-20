@@ -299,6 +299,7 @@ public class WifiPickerTracker extends BaseWifiTracker {
     @WorkerThread
     @Override
     protected void handleOnStart() {
+        Log.d(TAG, "JTS handleOnStart");
         // Clear any stale connection info in case we missed any NetworkCallback.onLost() while in
         // the stopped state.
         for (WifiEntry wifiEntry : getAllWifiEntries()) {
@@ -1361,6 +1362,7 @@ public class WifiPickerTracker extends BaseWifiTracker {
      */
     @WorkerThread
     private void notifyOnWifiEntriesChanged(@WifiEntriesChangedReason int reason) {
+        Log.d(TAG, "JTS notifyOnWifiEntriesChanged");
         if (mListener != null) {
             mMainHandler.post(() -> mListener.onWifiEntriesChanged(reason));
         }
